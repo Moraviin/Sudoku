@@ -1,12 +1,9 @@
 module.exports = function solveSudoku(matrix) {
   for(let r=0; r<9; r++){
     for(let c=0; c<9; c++){
-  //matrix.forEach(function(row,r){
-    //row.forEach(function(element,c){
       if(matrix[r][c]==0){
         let variable = avaibleElem(r,c,matrix);
         for(let i=0 , len= variable.length; i<len;i++){
-        //variable.forEach(function(numb){
           matrix[r][c]=variable[i];
           if(solveSudoku(matrix)){
             return matrix;
